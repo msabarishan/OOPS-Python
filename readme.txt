@@ -83,3 +83,39 @@
       Output:
       i5 10GB
       i7 16GB
+      
+#Constructer:
+   It determines how much memory needs to allocated for an object and this memory depends on the number of variables. "stud1=student()"    is called constructed. Whenever this code is executed the __init__ method is called allocating memory based on number of variables.      These are stored in heap memory.
+   
+# Self:
+    The object itself is passed as self along with the mentioned arguments.
+    
+    Eg:
+    
+    Codes:
+      # Constructor, self and compare
+
+      class computer:
+          
+          def __init__(self,core,ram):
+              self.core=core
+              self.ram=ram
+              
+          def comp(self,other):
+              if(self.ram == other.ram):
+                  return True
+              else:
+                  return False
+          
+      comp1=computer('i5','10GB')
+      comp2=computer('i7','10GB')
+      
+      
+      if (comp1.comp(comp2)):
+          print("Both have same Ram")
+      else:
+          print("Both have different Ram")
+          
+     Explanation:
+     When comp1=computer('i5','10GB') is executed the memory for two variables core and ram is allocated. For comparison comp1 is passed      as self and comp2 is passed as other argument.
+
