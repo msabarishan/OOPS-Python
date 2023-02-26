@@ -539,7 +539,7 @@ Three types: 1. Single Level 2.Mutli-level 3.Multiple
       
       
  #Polymorphism: The concept of Polymorphism denotes to object taking multiple  form. 
- 1. Duck Typing 2. Operator Overloading 3. Method Overloading 4.
+ 1. Duck Typing 2. Operator Overloading 3. Method Overloading 4.Method Overriding
  
      1. Duck Typing:
         
@@ -582,7 +582,51 @@ Three types: 1. Single Level 2.Mutli-level 3.Multiple
       total=car1+car2
       
       print(total.tax)
+      
+ #Polymorphism: Method Overloading: Similar methods with same name but able to pass different number of arguments. Python does not allow to create methods of same   name in a class. Hence method overloading is not applicable to Python. But there is a tweaked method that helps use this feature in python.
+   
+ Eg: Codes
+ 
+ class operations:
+
+    def sum(self,a=None,b=None,c=None):
+        total=0
+        if (a!=None and b!=None and c!=None):
+            total=a+b+c
+        elif (a!=None and b!=None):
+            total=a+b
+        else:
+            total=a
+        return total
     
+summation=operations()
+
+summation.sum(5,6)
+
+#Polymorphism: Method Over-riding: If there are methods with same name in different classes that have relation through inheritance, the method in the sub-class or immediate superclass(in-case method is not available in sub-class) will override the other methods while executing the sub-class.
+
+Codes:
+# Polymorphism - Method Overriding
+
+class A:
+
+    def display(self):
+        print("Class A")
+        
+class B(A):
+
+    def display(self):
+        print("Class B")
+    
+b=B()
+b.display()
+
+Explanantion:
+
+Though there are two methods with name as 'display'. The method in subclass B overrides the method in superclass A. This concept follows Method Resolution Order (MRO)
+that was discussed earlier.
+ 
+     
  
         
   
