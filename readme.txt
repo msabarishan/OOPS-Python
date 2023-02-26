@@ -1,4 +1,8 @@
 #OOPs-Object Oriented Programming System
+_____________________________________________________________________________________________________________________________________________________________________
+Below are the theoretical explanation with examples along with codes for better understanding of OOPs concept in Python. You can also download Jupyter workbook attached with the examples mentioned in the below explanation
+_____________________________________________________________________________________________________________________________________________________________________
+
 #Python also supports OOPs.
 #There are two major terminologies that should be known before entering OOPs concept, 1. Class 2.Object
 #Class: A Class is like an object constructor, or a "blueprint" for creating objects.
