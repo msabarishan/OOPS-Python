@@ -417,8 +417,128 @@ Three types: 1. Single Level 2.Mutli-level 3.Multiple
      
      c.feature1()
      c.feature3()
+    
+# Constructor Inheritance & Method Resolution Order (MRO):
+  Priority:
+  1. Multilevel or Single level inheritance: First priority is given to sub-class. If there is no constructor in sub-class, then constructor of super class is
+     inherited by subclass. Incase there are multiple level of inheritance, the priority goes from immediate successor to farthest successor
      
+  2. Multiple inheritance: First priority is given to sub-class. If there is no constructor in sub-class, then constructor of super class is
+     inherited by subclass. If there are more than one super class, the priority goes from left to right (MRO).
+     
+  Codes:
+  
+  The level of priority can be understood  with the help of below codes,
+  
+        class classA:
+          # This is constructor of A
+          def __init__(self):
+              print("this is class A")
+              
+          def feature1(self):
+              print("this is feature 1")
+              
+          def feature2(self):
+              print("this is feature 2")
+              
+        class classB(classA):
+            # This is constructor of B
+            def __init__(self):
+                print("this is class B")
+                
+            def feature3(self):
+                pass
+                
+            def feature4(self):
+                pass
+                
+        class classC(classA):  
+            def feature5(self):
+                pass
+                
+        class classD(classB):  
+            def feature6(self):
+                pass
+            
+        class classF():  
+            
+            def __init__(self):
+                print("this is class F")
+                
+            def feature7(self):
+                pass
+                
+        class classE(classA,classF):
+            def feature7(self):
+                pass
+        # class C does not have constructor        
+        c=classC()
+        # class B does  have constructor 
+        b=classB()
+        # class D does not have constructor and its immediate successor is class B 
+        d=classD()
+        # class E does not have constructor and left most constructor is class A
+        e=classE()
+        
+  super(): This is used for inheriting the constructor of multiple super class. It can be also used to pass the methods of superclass (which is not inherited due to              similar name)
+  
+  Codes:
+  1.Multilevel inheritance:
+  
+    class classA:
+        # This is constructor of A
+        def __init__(self):
+            print("this is class A")
+            
+        def feature1(self):
+            print("this is feature 1")
+            
+        def feature2(self):
+            print("this is feature 2")
+    
+            
+    class classB(classA):
+        # This is constructor of B
+        def __init__(self):
+            super().__init__()
+            print("this is class B")
+            
+    
+            pass
+    b=classB()
    
+ 2.Multiple Inheritance:
+   Codes:
+      # constructor inheritance-super().__init__ : Multilevel
+      class classA:
+          # This is constructor of A
+          def __init__(self):
+              print("this is class A")
+          
+      class classF():  
+          
+          def __init__(self):
+              print("this is class F")
+              
+          def feature1(self):
+              print("This is class F feature1")
+              
+      class classE(classA,classF):
+          def __init__(self):
+              super().__init__()
+              print("this is class E")
+          
+          def feature1(self):
+              print("This is class E feature1")
+              
+          def feat(self):
+              super().feature1()
+      
+      e=classE()
+      e.feat()
+ 
+        
+  
    
 
 
