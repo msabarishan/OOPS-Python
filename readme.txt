@@ -630,18 +630,4 @@ Explanantion:
 Though there are two methods with name as 'display'. The method in subclass B overrides the method in superclass A. This concept follows Method Resolution Order (MRO)
 that was discussed earlier.
  
-     
- 
-        
-  
-   
-
-
-
-
-             
-
-
-
-
-
+----------------------------------------------------------------- X -------------------------------------------------------------------------------------------------
