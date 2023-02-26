@@ -286,7 +286,145 @@
        student2.set_score(120)
        
        student.clg_loc()
-    
+       
+#Inner Class:
+       A class is nested inside a class. This can be used only if the nested class not used anywhere else.
+       
+       Eg: Codes
+       
+         class computer:
+             
+             def __init__(self):
+                 self.core='i5'
+                 self.ram='8GB'
+                 self.make=self.make()
+                 
+             class make:
+                 def __init__(self):
+                     self.brand="Acer"
+                     self.make="India"
+             
+         comp1=computer()
+         comp2=computer()
+         
+         print(comp1.make.brand,comp1.core)
+         
+         
+#Inheritance:
+
+Two Major Terms: 1. Super-Class (Parent Class) 2. Sub-Class (Child Class).
+Sub-class can in-herit the features of superclass but vice-versa is not possible.
+
+Three types: 1. Single Level 2.Mutli-level 3.Multiple
+    1. Single Level In-heritance: One class is passes to the next class. In below example Class A is super class and Class B is sub-class. Class B inherit the feature of Class A.
+
+    Codes:
+       class classA:
+           
+           def __init__(self):
+               print("this is class A")
+               
+           def feature1(self):
+               print("this is feature 1")
+               
+           def feature2(self):
+               print("this is feature 2")
+       
+               
+       class classB(classA):
+               
+           def feature3(self):
+               print("this is feature 3")
+               
+           def feature4(self):
+               print("this is feature 4")
+               
+       b=classB()
+       
+       b.feature1()
+       
+   2.Multilevel Inheritance: The  immediate super class of child class is also a child class of another super class. In below example: Class C inherit the features of class A and class B also class B inherit the feature of class A
+   
+     Codes:
+       
+       class classA:
+           
+           def __init__(self):
+               print("this is class A")
+               
+           def feature1(self):
+               print("this is feature 1")
+               
+           def feature2(self):
+               print("this is feature 2")
+       
+               
+       class classB(classA):
+               
+           def feature3(self):
+               print("this is feature 3")
+               
+           def feature4(self):
+               print("this is feature 4")
+               
+       class classC(classB):
+               
+           def feature5(self):
+               print("this is feature 5")
+               
+               
+       c=classC()
+       
+       c.feature1()
+       
+   3.Multiple Inheritance: A sub-class having more than one immediate super class. In the below example, class C is inherit the features of class A and class B, also      Class B and Class C are independent.
+   
+     Eg:
+     
+     Codes:
+     #multiple inheritance
+
+     class classA:
+         
+         def __init__(self):
+             print("this is class A")
+             
+         def feature1(self):
+             print("this is feature 1")
+             
+         def feature2(self):
+             print("this is feature 2")
+     
+             
+     class classB():
+             
+         def feature3(self):
+             print("this is feature 3")
+             
+         def feature4(self):
+             print("this is feature 4")
+             
+     class classC(classA,classB):
+         
+         def __init__(self):
+             print("this is class C")
+             
+         def feature5(self):
+             print("this is feature 5")
+             
+             
+     c=classC()
+     
+     c.feature1()
+     c.feature3()
+     
+   
+   
+
+
+
+
+             
 
 
 
