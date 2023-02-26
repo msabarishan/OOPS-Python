@@ -218,6 +218,75 @@
              student2.set_score(120)
              
              print(student1.average(student2))
+             
+    # 2. Class Method:
+    
+         Eg:
+         
+         Codes:
+         
+         class student:
+             college ="GCT"
+             def __init__(self,s):
+                 self.score=s
+             def average(self,other):
+                 return ((self.score+other.score)/2)
+             
+             #get_score is accessor method
+             def get_score(self):
+                 return self.score
+             #get_score is mutator method
+             def set_score(self,value):
+                 self.score=value
+             
+             # @ Decorator
+             @classmethod
+             def get_clg(cls):
+                 return cls.college
+             
+                 
+         student1=student(100)
+         student2=student(80)
+         
+         student2.set_score(120)
+         
+         print(student.college)
+         
+         Explanation: Use decorator for defining class method. This method is used especially to call class variables.
+    
+    #3. Static Method:
+        This method is used when there is no requirement for calling static or instance variable.
+        
+      Eg:
+       Codes:
+                   
+       class student:
+           college ="GCT"
+           def __init__(self,s):
+               self.score=s
+           def average(self,other):
+               return ((self.score+other.score)/2)
+           
+           #get_score is accessor method
+           def get_score(self):
+               return self.score
+           #get_score is mutator method
+           def set_score(self,value):
+               self.score=value
+               
+           # @ Decorator
+           @staticmethod   
+           def clg_loc():
+               print("GCT is located at Coimbatore, Tamilnadu")
+           
+               
+       student1=student(100)
+       student2=student(80)
+       
+       student2.set_score(120)
+       
+       student.clg_loc()
+    
 
 
 
