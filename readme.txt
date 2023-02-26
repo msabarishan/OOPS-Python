@@ -118,4 +118,108 @@
           
      Explanation:
      When comp1=computer('i5','10GB') is executed the memory for two variables core and ram is allocated. For comparison comp1 is passed      as self and comp2 is passed as other argument.
+ 
+ # Types of variable:
+      1. Instance Variable
+      2. Static/Class Variable
+      
+      Eg:
+      
+      Codes:
+      
+      #Typed of variable
+     # instance variable
+     
+     class computer:
+         
+         brand='Acer'
+         
+         def __init__(self,core,ram):
+             self.core=core
+             self.ram=ram
+             
+         
+     comp1=computer('i5','10GB')
+     comp2=computer('i7','16GB')
+     
+     # Modifying instance Variable
+     comp2.ram="32GB"
+     #Modifying class/ static variable
+     computer.brand='Lenovo'
+     
+     print(comp1.brand,comp1.core,comp1.ram)
+     print(comp2.brand,comp2.core,comp2.ram)
+     
+     Explanantion:
+     
+     In the above example brand is class variable, core and ram are instance variable.
+     
+#Types of Methods:
+
+     1. Instance Method
+     2. Class Method
+     3. Static Method
+     
+     1. Instance Method: Types: 1.Accessor 2.Mutator
+     
+     Eg:
+        #types of methods
+        #instance method
+        
+        class student:
+            def __init__(self,s):
+                self.score=s
+            def average(self,other):
+                return ((self.score+other.score)/2)      
+                
+        student1=student(100)
+        student2=student(80)
+        
+        print(student1.average(student2))
+        
+        1. Accessor Method:
+        
+             class student:
+                 def __init__(self,s):
+                     self.score=s
+                 def average(self,other):
+                     return ((self.score+other.score)/2)
+                 
+                 #get_score is accessor method
+                 def get_score(self):
+                     return self.score
+                 #get_score is mutator method
+                 def set_score(self,value):
+                     self.score=value
+                     
+             student1=student(100)
+             student2=student(80)
+             
+             print(student2.get_score())
+             
+       2. Mutator Method:
+       
+             class student:
+                 def __init__(self,s):
+                     self.score=s
+                 def average(self,other):
+                     return ((self.score+other.score)/2)
+                 
+                 #get_score is accessor method
+                 def get_score(self):
+                     return self.score
+                 #get_score is mutator method
+                 def set_score(self,value):
+                     self.score=value
+                     
+             student1=student(100)
+             student2=student(80)
+             
+             student2.set_score(120)
+             
+             print(student1.average(student2))
+
+
+
+
 
