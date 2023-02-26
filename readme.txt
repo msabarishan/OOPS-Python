@@ -1,7 +1,8 @@
 #OOPs-Object Oriented Programming System
 #Python also supports OOPs.
 #There are two major terminologies that should be known before entering OOPs concept, 1. Class 2.Object
-#Class: Class contains the attributes (variables) and behaviour(methods-In the context of class, functions will be called as methods)
+#Class: A Class is like an object constructor, or a "blueprint" for creating objects.
+        Class contains the attributes (variables) and behaviour(methods-In the context of class, functions will be called as methods)
       There are two different types of class. 1. In-built Class 2. User Defined / Extrinsic Class
       1. Inbuilt Class:
                       These class are already available as in-built function in Python. Eg: int,str
@@ -31,4 +32,54 @@
                       output: Science
                               <class '__main__.student'>
                       Explanantion: Here a new class student is formed and object stud1 is assigned to the student class.
+                      
+#Object: Object is an instance of a class.Everying in python is almost an object. Objects are already mentioned in the above examples.
 
+#Different ways of calling class,
+
+      Codes:
+      
+      class student:
+          def dept(self):
+              self.dept='Science'
+              return  self.dept
+          
+      stud1=student()
+      stud2=student()
+      # Method1 (Mostly used)
+      stud1_dept=stud1.dept()
+      # Method2 
+      stud2_dept=student.dept(stud2)
+      
+      print(stud1_dept)
+      print(stud2_dept)
+      
+      Output:
+      
+      Science
+      Science
+      
+#__init__ method in Python:
+      This method is automatically executed when a class is called.
+      
+      Codes:
+      
+      #_inint_method
+
+      class computer:
+          
+          def __init__(self,core,ram):
+              self.core=core
+              self.ram=ram
+          def spec(self):
+              print(self.core,self.ram)
+      
+      comp1=computer('i5','10GB')
+      comp2=computer('i7','16GB')
+      
+      comp1.spec()
+      comp2.spec()
+      
+      Output:
+      i5 10GB
+      i7 16GB
