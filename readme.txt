@@ -536,6 +536,53 @@ Three types: 1. Single Level 2.Mutli-level 3.Multiple
       
       e=classE()
       e.feat()
+      
+      
+ #Polymorphism: The concept of Polymorphism denotes to object taking multiple  form. 
+ 1. Duck Typing 2. Operator Overloading 3. Method Overloading 4.
+ 
+     1. Duck Typing:
+        
+       IDE: Generally Integrated Development Environments (IDEs) are coding tools that make writing, debugging, and testing your code easier (eg VS code, Pycharm). In             context of OOPs, Integrated development environments (IDE) are applications that facilitates the development of other applications.
+             
+    #Polymorphism -Duck Typing
+    Eg: Codes:
+    
+    class vscode:
+        def execute(self):
+            print("Compiled Successfully")
+            
+    class test:
+        def result(self,ide):
+            ide.execute()
+        
+    vscode_ide=vscode()
+    test1=test()
+    test1.result(vscode_ide)
+    
+    Explanantion: Here execute is a method of class vscode. There is no inheritance between class test and class vscode. Still the method execute is called through                     class test by passing the execute method as ide.
+    
+    #Polymorphism -Operator Overloading : This involves redefining the function of operators (lik '+,'-') in a class.
+    Eg: Codes:
+    
+      class cars:
+    
+          def __init__(self,cost,tax):
+              self.cost=cost
+              self.tax=tax
+          def __add__(self,other):
+              cost=self.cost+other.cost
+              tax=self.tax+other.tax
+              total=cars(cost,tax)
+              return total
+          
+      car1=cars(10000,1800)
+      car2=cars(20000,4000)
+      
+      total=car1+car2
+      
+      print(total.tax)
+    
  
         
   
